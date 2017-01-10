@@ -1,10 +1,12 @@
 #!/bin/bash
+set -e
 
 BACKUPDATE=`date +%Y-%m-%d-%H-%M-%S`
 
-repo_list=(
-  "git@github.com:gendosu/git-backup.git"
-)
+repo_list=`cat repositories.txt`
+
+mkdir -p repositories
+cd repositories
 
 for i in ${repo_list[@]}; do
   echo $i
