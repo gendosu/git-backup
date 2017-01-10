@@ -11,5 +11,5 @@ for i in ${repo_list[@]}; do
   git clone --bare $i
 done
 
-find . -type d -d 1 -exec tar cvfz {}-$BACKUPDATE.tgz {} \;
+find . -type d -d 1 -not -name .git -exec tar cvfz {}-$BACKUPDATE.tgz {} \;
 
